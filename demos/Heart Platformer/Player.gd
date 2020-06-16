@@ -40,8 +40,13 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_up"):
 			animation.play("jump")
 			motion.y = -JUMP_FORCE
-		
-		
+	
+	elif is_on_wall():
+		animation.play("jump")
+		if Input.is_action_just_pressed("ui_up"):
+			animation.play("jump")
+			motion.y = -JUMP_FORCE		
+				
 	else:
 		animation.play("jump")
 		if x_input == 0:			
